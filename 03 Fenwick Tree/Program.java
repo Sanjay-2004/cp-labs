@@ -28,28 +28,20 @@ class Solution {
         N = arr.length + 1;
         fenwick = new int[N];
         nums = arr;
-        for (int i = 0; i < arr.length; i++)
-            init(i + 1, arr[i]);
+        for (int i = 0; i < arr.length; i++) {
+            update(i + 1, arr[i]);
+        }
     }
 
     int findRangeSum(int l, int r) {
         return sum(r + 1) - sum(l);
     }
 
-    void init(int idx, int val) {
-        while (idx < N) {
-            fenwick[idx] += val;
-            idx += (idx & (-idx));
-        }
-    }
-
-    void update(int i, int s) {
-        int diff = s - nums[i];
-        nums[i] = s;
-        i++;
+    void update(int i, int val) {
         while (i < N) {
-            fenwick[i] += diff;
-            i += (i & (-i));
+
+            fenwick[i] += val;
+            i += (i & -i);
         }
     }
 
