@@ -4,12 +4,12 @@ public class PalindromePerm {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = sc.next();
-        System.err.println(new Solution().isPalin(s));
+        System.err.println(new Palindrome().isPalin(s));
         sc.close();
     }
 }
 
-class Solution {
+class Palindrome {
     boolean isPalin(String s) {
         int mp = 0;
         for (int i = 0; i < s.length(); i++) {

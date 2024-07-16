@@ -12,12 +12,12 @@ public class SumAtLeastK {
             nums[i] = sc.nextInt();
         }
 
-        System.out.println(new Solution().shortestSubarray(nums, k));
+        System.out.println(new SumAtK().shortestSubarray(nums, k));
         sc.close();
     }
 }
 
-class Solution {
+class SumAtK {
     public int shortestSubarray(int[] nums, int k) {
         int n = nums.length;
         Deque<long[]> deque = new LinkedList<>();

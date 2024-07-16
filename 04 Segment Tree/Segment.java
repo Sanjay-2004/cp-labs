@@ -15,7 +15,7 @@ class SegmentTreeNode {
     }
 }
 
-class Solution {
+class SegmentTree {
     SegmentTreeNode root;
 
     public int maxEvents(int[][] events) {
@@ -103,7 +103,7 @@ public class Segment {
             nums[i][1] = Integer.parseInt(val[1]);
         }
 
-        Solution solution = new Solution();
+        SegmentTree solution = new SegmentTree();
         int result = solution.maxEvents(nums);
         System.out.println(result);
         scan.close();

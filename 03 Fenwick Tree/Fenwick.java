@@ -14,17 +14,17 @@ public class Fenwick {
         int s1 = sc.nextInt();
         int s2 = sc.nextInt();
 
-        System.out.println(new Solution(arr).findRangeSum(s1, s2));
+        System.out.println(new FenwickTree(arr).findRangeSum(s1, s2));
 
         sc.close();
     }
 }
 
-class Solution {
+class FenwickTree {
     int N;
     int[] fenwick, nums;
 
-    Solution(int[] arr) {
+    FenwickTree(int[] arr) {
         N = arr.length + 1;
         fenwick = new int[N];
         nums = arr;
