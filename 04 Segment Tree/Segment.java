@@ -1,6 +1,26 @@
 import java.util.*;
 import java.io.*;
 
+public class Segment {
+    public static void main(String args[]) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        scan.nextLine();
+        String str[] = scan.nextLine().split(",");
+        int nums[][] = new int[n][2];
+        for (int i = 0; i < n; i++) {
+            String val[] = str[i].trim().split(" ");
+            nums[i][0] = Integer.parseInt(val[0]);
+            nums[i][1] = Integer.parseInt(val[1]);
+        }
+
+        SegmentTree solution = new SegmentTree();
+        int result = solution.maxEvents(nums);
+        System.out.println(result);
+        scan.close();
+    }
+}
+
 class SegmentTreeNode {
     int start, end;
     SegmentTreeNode left, right;
@@ -87,25 +107,5 @@ class SegmentTree {
         } else {
             return Math.min(query(curr.left, left, mid), query(curr.right, mid + 1, right));
         }
-    }
-}
-
-public class Segment {
-    public static void main(String args[]) throws IOException {
-        Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
-        scan.nextLine();
-        String str[] = scan.nextLine().split(",");
-        int nums[][] = new int[n][2];
-        for (int i = 0; i < n; i++) {
-            String val[] = str[i].trim().split(" ");
-            nums[i][0] = Integer.parseInt(val[0]);
-            nums[i][1] = Integer.parseInt(val[1]);
-        }
-
-        SegmentTree solution = new SegmentTree();
-        int result = solution.maxEvents(nums);
-        System.out.println(result);
-        scan.close();
     }
 }
