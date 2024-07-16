@@ -90,7 +90,7 @@ class Solution {
     }
 }
 
-public class Program {
+public class Segment {
     public static void main(String args[]) throws IOException {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();

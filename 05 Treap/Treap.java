@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Program {
+class Treap {
     class Pair<U, V> {
         U left;
         V right;
@@ -158,7 +158,7 @@ class Program {
         int[] arr = new int[n];
         for (int i = 0; i < n; i++)
             arr[i] = sc.nextInt();
-        System.out.println(new Program().countReversePairs(arr));
+        System.out.println(new Treap().countReversePairs(arr));
         sc.close();
     }
 }
